@@ -15,6 +15,8 @@ function App() {
             Array.from({ length: size }, () => Math.random() < 0.1)
         )
     );
+    const [blue, setBlue] = React.useState(Math.floor(Math.random() * 100));
+
 
     React.useEffect(() => {
         if (!grid.some(row => row.some(cell => cell))) {
@@ -23,6 +25,7 @@ function App() {
                 Array.from({ length: size }, () => Math.random() < 0.1)
             ));
             setRound(prev => prev + 1);
+            setBlue(Math.random() * 200);
         }
     }, [grid]);
 
@@ -40,7 +43,7 @@ function App() {
         row.map((cell, j) => {
             const r = 30 * i;
             const g = 30 * j;
-            const b = 100;
+            const b = blue;
             return `rgb(${r}, ${g}, ${b})`;
         })
     );
@@ -113,7 +116,25 @@ function App() {
           </div>
 
 
-          <div>Round {round}</div>
+          <motion.span
+              initial={{ y: 0, scale: 1 }}
+              animate={{ y: [-5, 1.0, -5, 0], scale: [1, 1.1, 0.95, 1] }}
+              transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+              }}
+              style={{
+                  fontSize: "4em",
+                  fontFamily: "Luckiest Guy, cursive",
+                  color: "#ffe8a6",
+                  WebkitTextStroke: "4px black",
+                  textShadow: "2px 2px 0 #ffb347, 6px 6px 0 rgba(0,0,0,0.5)",
+              }}
+          >
+              <div> Round {round}</div>
+          </motion.span>
         {console.log(grid)}
 
       </div>
