@@ -1,0 +1,76 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.title {
+    padding-bottom: 2em;
+    word-spacing: 0.2em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    max-width: 500px;
+    width: 100%;
+}
+
+.item {
+    font-size: 1.5em;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    transition: background-color 0.1s;
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.item:has(.checkbox:checked) {
+    background-color: rgba(135, 135, 135, 0.2);
+}
+
+.borderWrapper {
+    position: relative;
+    display: inline-block;
+    padding: 1em;
+}
+
+.animatedBorder {
+    background: transparent;
+    position: absolute;
+    padding: 25px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-image:  url('data:image/p;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAAAXNSR0IArs4c6QAAAiJJREFUeF7t291NAzEQReGkATpConQkOqIBEI9rJI6ufNf7w8lrJhP783g28SbPh4+qwLOazWQPQctFIOjRoO+fH1/JGN5eXqNFu3r+aLI/kFef8N7jFxS2W7rDBF0Nmm4R6q/jil89/zhfrNCrT3jv8QtKW2iyBVihITBdpH6BtrdION7LhY/Agk4uoaCTgOPLBRW0LFBOZ4UKWhYop7NCBS0LlNNZoYKWBcrprNDVoOP7+d1+KxIfjgj6dwkLuvMWP/yAuTy/5emmK7TdAmhAbaHZa0A6XjyxFzT7oYagk/eQ4h5qhZYrdLYH0Ql3u2e2CyAdP255QU/+wT69as5W8OqCsELDFaOCWH4bmQYUzg/D2xVKPVVQXJLsu72ggmYCbvnMC6MFRaIsQNDMC6MFRaIsQNDMC6MFRaIsQNDMC6MFRaIs4HDQo88TMy6OboPSWYSnTbwmmwhBw39Pk6+gZwNt91RaYaqQ9PnZHpqOF3uooOW7noIKuqmB02352QGlPe/s8dRTsYcKul1iQcslL+jRoG7xbAX8F0jmhdGCIlEWIGjmhdGCIlEWIGjmhdGCIlEWIGjmhdGCIlEWIGjmhdGCIlEWIGjmhdEI2j6hH/ONA2ifHazOP85v+Xno6gnvvWCC4ib+O+B056H/vkJneyqt6N3yYw+924TTnpoWhKDQUwUFoNNV6ORF8vYvj7f87UUmJyjoJGD8wb78frdP9w0PciBzCmiCWwAAAABJRU5ErkJggg==') 28 /  28px / 0 round;
+    border-width:  28px;
+    border-style:  solid;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.gridWrapper {
+    position: relative;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffddad;
+    border-radius: 2px;
+
+
+}
+
+
+
+
+
+
+
