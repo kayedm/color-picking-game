@@ -8,3 +8,20 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color: beige;
+        background-color: #f3e9dc;
+        --border-color: #000000;
+        --line-color: #c9bfb4;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        background-color: #0d1b2a;
+        --border-color: #ffffff;
+        --line-color: #5c738c;
+    }
+}
